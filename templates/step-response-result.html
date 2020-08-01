@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{%block head%}
+<script src="https://cdn.bokeh.org/bokeh/release/bokeh-2.1.1.min.js"></script>
+
+
+{{ script |safe}}
+
+{% endblock %}
+{%block title %}
+Step Response
+{% endblock %}
+
+{%block body %}
+<div class = "row">
+<div id = "step-plot" class="col-sm-8">
+<h2>Step Response</h2>
+
+{{divs['plot'] | safe }}
+</div>
+ <div id = "tf-step" class="col-sm-4">
+<h4>Controller Transfer Function:</h4>
+<pre>{{sysC | safe}}</pre>
+
+<h4>System Transfer Function:</h4>
+<pre>{{sysT | safe}}</pre>
+
+<h4>Resulting Transfer Function:</h4>
+<pre>{{sys | safe}}</pre>
+
+</div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Complex Converter
+{% endblock %}
+
+{%block body %}
+<div class = 'container'>
+<div class = 'row'>
+<div id = "rl-input" class=".col-12 .col-sm-6 .col-md-8">
+    <h2 style = 'width: 100%; margin-bottom: 30px;'>Complex Converter - Results</h2>
+<div class = 'row'>
+<div class = 'col'>
+<h5>Converter:</h5>
+</div>
+<div class = 'col'>
+<pre><b>{{conv}}</b></pre>
+</div>
+</div>
+<div class = 'row'>
+<div class = 'col'>
+<h5>Input:</h5>
+</div>
+<div class = 'col'>
+<pre>{{in1}} | {{in2}} </pre>
+</div>
+</div>
+<div class = 'row' style = 'width: 100%'>
+<div class = 'col' style = 'width: 100%'> <h5>Output:</h5></div>
+<div class = 'col' style = 'width: 100%'>    <pre>{{z[0] | round(3)}} | {{z[1] | round(3)}}</pre></div>
+</div>
+
+</div>
+
+<div id = "theory" class=".col-sm-6">
+    <h3> Explaining the Output</h3>
+    <p> If you have chosen the converter <b>'rect2pol'</b>, your input is real | imaginary and the output is modulus | phi.</p>
+    <p>If you have chosen the converter <b>'pol2rect'</b>, your input is R | phi and your output is real | imaginary.</p>
+    <p> The output <b>phi</b> from <b>rect2pol</b> always returns in <b>degrees</b> in this current version.</p>
+</div>
+
+</div>
+</div>
+{% endblock %}
+

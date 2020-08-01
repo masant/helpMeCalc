@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Bode Diagram
+{% endblock %}
+
+{%block body %}
+
+
+ <div class="container" >
+            <div class="row">
+              <div id = "rl-input" class=".col-12 .col-sm-6 .col-md-8">
+
+
+                <h2>Bode Diagram</h2>
+<form action = "/bode" method = "post">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Numerator" name = "num">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Denominator" name = "den">
+
+    </div>
+    <div class = 'col'>
+        <button style = 'margin-left: 22px' class="btn btn-outline-success" type="submit">Run</button>
+    </div>
+  </div>
+
+</form>
+
+
+              <div id = "theory" class=".col-sm-4">
+                  <h3>Some Tips</h3>
+              <ol>
+                      <li><h5>Enter with the Numerator from your System Transfer Function</h5></li>
+                      <p>You have to put all coefficients from the numerator. For example, if the numerator
+                      has a polynom like <pre>2x³ + 3x² + 6x + 12,</pre> you have to put in the input 'Numerator' as the following:
+                      <pre>2 3 6 12</pre>.</p>
+
+                      <li><h5>Complete the Denominator from your System Transfer Function</h5></li>
+                      <p>You have to follow the same logic used to enter the numerator, explained above.</p>
+
+                      <li><h5>Press the "Run" button</h5></li>
+                      <p>After you complete all the inputs, you just need to press the 'run' buttom and
+                      that's all! Easy, right? :)</p>
+                  <h3>Some Theory</h3>
+
+                    <p>Bode diagrams are graphical representations of the frequency responses and are used in solving design
+                    problems. Magnitude and phase functions are shown on separate graphs using logarithmic frequency scale
+                    along the x-axis. Logarithm of the frequency to base 10 is used for the x-axis of a graph. </p>
+
+                    <p>Zero frequency will correspond to negative infinity on the logarithmic scale and will not show on the
+                    plots. The x-axis is graduated in log10 ω and so every decade of frequency
+                    (e.g., … 0.001, 0.01, 0.1, 1, 10, 100, …) is equally spaced on the x-axis.</p>
+
+                    <p>The gain magnitude, represented by decibels defined as 20 log10 [A(ω)], is plotted on the y-axis of
+                    magnitude plot. Since A(ω) dB can be both positive and negative, the y-axis has both positive and
+                    negative values. </p>
+                    <p>Zero dB corresponds to a magnitude function of unity. The y-axis for the phase function uses a
+                    linear scale in radians or degrees. Semilog graph paper makes it convenient to sketch Bode plots.</p>
+                    <p><b>Source: </b><a href = "https://www.sciencedirect.com/topics/engineering/bode-diagram">Science Direct</a></p>
+                    </div>
+
+            </div>
+            </div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Bode Diagram Plot
+{% endblock %}
+
+{%block body %}
+<div class = 'container'>
+<div id = 'bode' class = 'row'>
+<div class="col-md-8">
+<h2 >Bode Diagram</h2>
+<div class = 'bode-plot'>
+{{figure_html | safe}}
+</div>
+</div>
+<div id = 'bode-tf' class = 'col-md-4'>
+    <h3>Transfer Function:</h3>
+    <pre style = "background-color: rgba(255,255,255,0.85);">{{sys}}</pre>
+</div>
+
+
+</div>
+</div>
+
+{% endblock %}
+

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Root Locus
+{% endblock %}
+
+{%block body %}
+
+
+ <div class="container" >
+            <div class="row">
+              <div id = "rl-input" class=".col-12 .col-sm-6 .col-md-8">
+                  <h2>Root Locus</h2>
+<form action = "/rlocus" method = "post">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Numerator" name = "num">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Denominator" name = "den">
+    </div>
+  <div class = "row">
+       <div class="form-group">
+        <input id="gain" autocomplete="off" autofocus class="form-control" name="kmin" placeholder="Gain K (min)" type="number", min = "-99999", max = "99999">
+    </div>
+    <div class="form-group">
+        <input id="gain" autocomplete="off" autofocus class="form-control" name="kmax" placeholder="Gain K (max)" type="number", min = "-999999", max = "99999">
+    </div>
+
+  </div>
+  <button class="btn btn-outline-success" type="submit">Run</button>
+</form>
+                </div>
+
+              <div id = "theory" class=".col-sm-4">
+                  <h3>Some Tips</h3>
+              <ol>
+                      <li><h5>Enter with the Numerator from your System Transfer Function</h5></li>
+                      <p>You have to put all coefficients from the numerator. For example, if the numerator
+                      has a polynom like <pre>2x³ + 3x² + 6x + 12,</pre> you have to put in the input 'Numerator' as the following:
+                      <pre>2 3 6 12</pre>.</p>
+
+                      <li><h5>Complete the Denominator from your System Transfer Function</h5></li>
+                      <p>You have to follow the same logic used to enter the numerator, explained above.</p>
+
+                      <li><h5>Press the "Run" button</h5></li>
+                      <p>After you complete all the inputs, you just need to press the 'run' buttom and
+                      that's all! Easy, right? :)</p>
+                  <h3>Some Theory</h3>
+                  <p>In control theory and stability theory, root locus analysis is a graphical method for examining how the
+                  roots of a system change with variation of a certain system parameter,
+                  commonly a gain within a feedback system.</p>
+
+                  <p>This is a technique used as a stability criterion in the field of classical control theory
+                  developed by Walter R.
+                  Evans which can determine stability of the system. </p>
+
+                  <p>The root locus plots the poles of
+                  the closed loop transfer function in the complex s-plane as a function of a gain parameter
+                  (see pole–zero plot).</p>
+
+                  <p>A graphical method that uses a special protractor called a "Spirule" was
+                    once used to determine angles and draw the root
+                    loci</p>
+                    </div>
+            </div>
+            </div>
+
+
+{% endblock %}
+

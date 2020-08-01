@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Informations
+{% endblock %}
+
+{%block body %}
+<div class = 'info'>
+<div class = 'col-12'>
+<h2>Informations</h2>
+
+<h4>About the Project</h4>
+
+<p><b style = 'color: green'>helpMeCalc!</b> consists in a webpage that reunite some web applications ables to help engineering students
+to calculate some problems. In the platform, it is possible return some calculations results and some plots.</p>
+
+<p>In this initial version, it is possible to calculate Root Locus, Bode Diagram, Complex Numbers Conversions and
+Step Response, but, the idea is improve this project as fast as possible.
+
+All the project was build using Python (Flask), , HTML (w/ Jinja2), CSS and some basics of Javascript.
+For plotting it was used matplotlib + mpld3 for root locus and bode; and bokeh (step response).
+All topics about control theory, I use the (awesome) library control, that has a lot of complete solutions for this area.</p>
+
+<h4>About the Developer</h4>
+<p>Hi! My name is Matheus Alves, i'm a 24 years old electrical engineering student from Salvador-BA, Brazil.
+Each year, programming is ocuppying more space in my life (as a student and as a professional), so, I'm trying to
+improve my skills in this area, as always as I can. This is my first web development project, so I hope you like it! :)</p>
+
+<p>If you want to give me feedbacks or suggestions about helpMeCalc or any other programming topics, please, acess the
+'Contact' page and contact-me. :)</p>
+</div>
+</div>
+
+{% endblock %}
+

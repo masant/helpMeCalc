@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Welcome!
+{% endblock %}
+
+{%block body %}
+<div class = 'container-fluid'>
+  <div class = 'col-12'>
+<h2>Welcome to</h2>
+<h1 id = 'header'>helpMeCalc!</h1>
+<script>
+  function submit(){
+      document.getElementById("select-form").submit();
+      }
+</script>
+<form id = "select-form" action = "/" method = "post">
+<select id = "select" class="custom-select custom-select-lg mb-3" name = "select" onchange = "submit()">
+  <option selected>What will you calculate today?</option>
+  <option>Root Locus</option>
+  <option>Complex Converter</option>
+  <option>Step Response</option>
+  <option>Bode Diagram</option
+</select>
+
+</form>
+</div>
+</div>
+{% endblock %}

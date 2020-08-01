@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Step Response
+{% endblock %}
+
+{%block body %}
+
+
+<div class = "row">
+<div id = "sr-input" class=".col-md-8">
+    <form action = "/step-response" method = "post">
+      <h2>Step Response</h2>
+      <h5>Controller Transfer Function:</h5>
+        <div class="row">
+          <input id = "num-den" type="text" class="form-control" placeholder="C(s) Numerator" name = "numC">
+          <input id = "num-den" type="text" class="form-control" placeholder="C(s) Denominator" name = "denC">
+        </div>
+      <h5>System Transfer Function:</h5>
+        <div class = "row">
+          <input id = "num-den" type="text" class="form-control" placeholder="T(s) Numerator" name = "numT">
+          <input id = "num-den" type="text" class="form-control" placeholder="T(s) Denominator" name = "denT">
+        </div>
+      <button class="btn btn-outline-success" type="submit">Run</button>
+    </form>
+</div>
+
+<div id = "sr-theory" class=".col-6 .col-md-4">
+  <h3>Some Tips</h3>
+              <ol>
+                      <li><h5>Enter with the Numerator from your System Transfer Function</h5></li>
+                      <p>You have to put all coefficients from the numerator. For example, if the numerator
+                      has a polynom like <pre>2x³ + 3x² + 6x + 12,</pre> you have to put in the input 'Numerator' as the following:
+                      <pre>2 3 6 12</pre>.</p>
+
+                      <li><h5>Complete the Denominator from your System Transfer Function</h5></li>
+                      <p>You have to follow the same logic used to enter the numerator, explained above.</p>
+
+                      <li><h5>Press the "Run" button</h5></li>
+                      <p>After you complete all the inputs, you just need to press the 'run' buttom and
+                      that's all! Easy, right? :)</p>
+    <h3>Some Theory</h3>
+    <p>The step response of a system in a given initial state consists of the time evolution of its outputs when its control
+    inputs are Heaviside step functions. In electronic engineering and control theory,
+    step response is the time behaviour of the outputs of a
+    general system when its inputs change from zero to one in a very short time.
+    The concept can be extended to the abstract mathematical
+    notion of a dynamical system using an evolution parameter.</p>
+</div>
+</div>
+
+
+
+
+{% endblock %}
+

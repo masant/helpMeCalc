@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Welcome!
+{% endblock %}
+
+{%block body %}
+<div class = "container">
+<div class = "">
+<h2>Root Locus</h2>
+
+<div class = "plot">{{figure_html | safe}}</div>
+
+<div>
+    <h3>Tranfer Function:</h3>
+    <pre>{{sys}}</pre>
+</div>
+
+<div>
+    <h3>Gain Value:</h3>
+    <span id = "rangeValue">0</span>
+    <input class = "range" type = "range" name = "slider" value = "0" min = "{{kmin}}" max = "{{kmax}}" step = "0.1"
+    onmousemove = "rangeSlider(this.value)" onChange = "rangeSlider(this.value)">
+</div>
+<div>
+    <h3>Pole Value:</h3>
+     <span id = "poleValue"><pre></pre></span>
+</div>
+
+
+{% for i in range(klist|length): %}
+<label id="klist{{i}}" name="{{klist[i]}}" style="display: none;" >{{klist[i] | round(2)}}</label>
+<label id="rlist{{i}}"  name="{{rlist[i]}}" style="display: none;">{{rlist[i]}}</label>
+{% endfor%}
+<label id = "total_len" style="display: none;">{{klist|length}}</label>
+
+<script type = "text/javascript">
+
+    var total_length = document.getElementById('total_len').innerHTML;
+
+
+    function rangeSlider(value) {
+        document.getElementById('rangeValue').innerHTML = value;
+
+        for (var i = 0; i < total_length; i++) {
+
+            index = document.getElementById('klist' + i).innerHTML;
+
+            if (index == value) {
+                poleValue = document.getElementById('rlist' + i).innerHTML;
+                document.getElementById('poleValue').innerHTML = poleValue;
+            }
+
+        }
+    }
+
+
+</script>
+</div>
+</div>
+
+
+
+{% endblock %}
+

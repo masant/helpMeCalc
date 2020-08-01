@@ -1,0 +1,92 @@
+{% extends "layout.html" %}
+
+{%block title %}
+Complex Converter
+{% endblock %}
+
+{%block body %}
+
+
+ <div class="container">
+            <div class="row">
+              <div id = "rl-input" class=".col-12 .col-sm-6 .col-md-8">
+                  <h2 style = "margin-left: 15px">Complex Converter</h2>
+<form action = "/complex-converter" method = "post">
+    <div class = 'col'>
+    <select id = 'complex-conv' name = 'complex-conv' class="custom-select" onmouseleave = 'placeholder(this.value)'>
+      <option value = '0' selected>Converter</option>
+      <option value="1">rect2polar</option>
+      <option value="2">polar2rect</option>
+    </select>
+</div>
+    <div class = "row">
+    <div class="col">
+      <input id = 'cc-in1'type="text" class="form-control" placeholder="" name = "in1">
+    </div>
+    <div class="col">
+      <input id = 'cc-in2' type="text" class="form-control" placeholder="" name = "in2">
+    </div>
+    </div>
+    <div id = 'angle-unit'class = 'col'>
+    <select name = 'angle' class="custom-select">
+      <option  selected>Angle Unit</option>
+      <option value="1">Degrees</option>
+      <option value="2">Radians</option>
+    </select>
+    </div>
+    <div class = 'col'>
+  <button class="btn btn-outline-success" type="submit">Run</button>
+</div>
+</form>
+<script type = "text/javascript">
+    function placeholder(value) {
+
+        if (document.getElementById('complex-conv').value != '0'){
+            if (document.getElementById('complex-conv').value === '1'){
+                document.getElementById('cc-in1').placeholder = 'Real';
+                document.getElementById('cc-in2').placeholder = 'Imag';
+            }
+            else {
+                document.getElementById('cc-in1').placeholder = 'R';
+                document.getElementById('cc-in2').placeholder = 'phi';
+            }
+        }
+        else{
+            document.getElementById('cc-in1').placeholder = '';
+            document.getElementById('cc-in2').placeholder = '';
+        }
+
+    }
+</script>
+                </div>
+
+              <div id = "theory" class=".col-sm-4">
+                  <h3>Some Tips</h3>
+                  <ol>
+                      <li><h5>Choose your converter type.</h5></li>
+                      <p>If you want to convert a complex number Z from rectangular to polar,
+                      you should choose rect2pol. Otherwise, if you want to convert from polar
+                      to rectangular, you should choose pol2rect</p>
+
+                      <li><h5>Complete the inputs</h5></li>
+                      <p>Each input must be completed. If you choose rect2pol, you must complete
+                      with the Real part and Imaginary part from the complex number. Otherwise,
+                      if you use pol2rect, you have to complete with R (modulus) and phi (phase) from the
+                      complex number.</p>
+                        <p> When you choose 'rect2pol', the <b>input 'angle'</b> is used to specify the angle unit of
+                        the <b>output 'phi'</b>.</p>
+                        <p>When you choose 'pol2rect', the <b>input 'angle' </b>specify the angle unit of the <b>input 'phi'</b></p>
+
+                      <li><h5>Press the "Run" button</h5></li>
+                      <p>After you complete all the inputs, you just need to press the 'run' buttom and
+                      that's all! Easy, right? :)</p>
+
+
+                  </ol>
+                    </div>
+            </div>
+            </div>
+
+
+{% endblock %}
+
