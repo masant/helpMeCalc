@@ -2,3 +2,6 @@ cs50
 Flask
 Flask-Session
 requests
+bokeh
+mpld3
+control
