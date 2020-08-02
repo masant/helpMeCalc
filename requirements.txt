@@ -7,3 +7,5 @@ bokeh
 mpld3
 gunicorn
 scipy
+cmath
+math
