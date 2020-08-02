@@ -5,3 +5,4 @@ requests
 bokeh
 mpld3
 control
+gunicorn
