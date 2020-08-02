@@ -6,3 +6,4 @@ gunicorn
 bokeh
 mpld3
 gunicorn
+scipy
