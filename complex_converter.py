@@ -1,15 +1,18 @@
 import cmath
 import math
 
-def rect2pol(real,imag):
+def rect2pol(real,imag,angle):
     z = real + 1j*imag
     z_polar_temp = cmath.polar(z)
 
     temp = []
 
     temp.append(z_polar_temp[0])
-    temp.append(math.degrees(z_polar_temp[1]))
-
+    
+    if (angle):
+        temp.append(z_polar_temp[1])
+    else:
+        temp.append(math.degrees(z_polar_temp[1]))        
     z_polar = temp
     z_polar = tuple(z_polar)
 

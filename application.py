@@ -170,9 +170,9 @@ def complex_converter():
             angle = True;
         else:
             angle = False;
-
+        print(angle)
         if converter == '1':
-            z = rect2pol(in1,in2)
+            z = rect2pol(in1,in2,angle)
             conv = 'rect2pol'
         else:
             z = pol2rect(in1, in2, angle)
