@@ -2,7 +2,7 @@
 
 # helpMeCalc!
 
-helpMeCalc! consists in a webpage that reunite some web applications ables to help engineering students to calculate some problems. In the platform, it is possible return some calculations results and some plots. In this initial version, it is possible to calculate Root Locus, Bode Diagram, Complex Numbers Conversions and Step Response, but, the idea is improve this project as fast as possible.
+[helpMeCalc!](http://helpmecalc.herokuapp.com/) consists in a webpage that reunite some web applications ables to help engineering students to calculate some problems. In the platform, it is possible return some calculations results and some plots. In this initial version, it is possible to calculate Root Locus, Bode Diagram, Complex Numbers Conversions and Step Response, but, the idea is improve this project as fast as possible.
 
 All the project was build using **Python (Flask), HTML (w/ Jinja2), CSS and some basics of Javascript**. For plotting it was used *matplotlib + mpld3* for root locus and bode; and *bokeh (step response)*. All topics about control theory, I used the (awesome) library *control*, that has a lot of complete solutions for this area.
 
